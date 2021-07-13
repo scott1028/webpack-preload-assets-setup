@@ -1,7 +1,11 @@
+import { useState }  from 'react';
+
+import Component from './Component';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [flag, setFlag] = useState(false);
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,8 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => setFlag(value => !value)}>Toggle</button>
+        { flag && <Component /> }
       </header>
     </div>
   );
